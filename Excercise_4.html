@@ -186,9 +186,6 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Excercise_1.html">Exercise 1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Excercise_2.html">Excercise 2</a></li>
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="Excercise_3.html">Excercize 3</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Excercise 4</a></li>
 </ul>
@@ -413,7 +410,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/x5/spm_6r5944dfgx3qj8my0m440000gn/T/ipykernel_3002/2162656668.py:1: DeprecationWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/x5/spm_6r5944dfgx3qj8my0m440000gn/T/ipykernel_3868/2162656668.py:1: DeprecationWarning: 
 Pyarrow will become a required dependency of pandas in the next major release of pandas (pandas 3.0),
 (to allow more performant data types, such as the Arrow string type, and better interoperability with other libraries)
 but was not found to be installed on your system.
@@ -765,7 +762,7 @@ memory usage: 3.3 MB
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-Index: 87528 entries, 82385 to 14425
+Index: 87528 entries, 75321 to 47620
 Data columns (total 5 columns):
  #   Column                  Non-Null Count  Dtype  
 ---  ------                  --------------  -----  
@@ -780,6 +777,7 @@ memory usage: 4.0 MB
 </div>
 </div>
 </div>
+<p>What i did here was analyzing the df to get the exact number of days registered and so adapt the df to have a easy dividable number (87528 instead of 87693), now that we shaped the df we can train the various models using a TimeSeriesSplit and a gridsearchviewcv to find the best params and then manually train every model using the params we found and the timeserie correctly implemnted</p>
 <section id="knn">
 <h2>KNN<a class="headerlink" href="#knn" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
@@ -1258,19 +1256,19 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>for T = 7 RMSE: 1.0801514882210828
-for T = 7 R2: 0.32683601001031815
-for T = 7 MAPE: 190845917030835.75
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>for T = 7 RMSE: 1.0685965493775373
+for T = 7 R2: 0.333719371228014
+for T = 7 MAPE: 175829115970068.47
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>for T = 14 RMSE: 1.081241149244583
-for T = 14 R2: 0.3266961963797139
-for T = 14 MAPE: 188944232766172.53
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>for T = 14 RMSE: 1.0708364113220818
+for T = 14 R2: 0.3337393356979297
+for T = 14 MAPE: 176858708798143.5
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>for T = 21 RMSE: 1.0815800690132824
-for T = 21 R2: 0.32742789602942957
-for T = 21 MAPE: 190268691804268.25
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>for T = 21 RMSE: 1.0723033329448124
+for T = 21 R2: 0.33488151278380585
+for T = 21 MAPE: 173996513905351.28
 </pre></div>
 </div>
 </div>
@@ -1323,19 +1321,19 @@ for T = 21 MAPE: 190268691804268.25
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>for T = 7 RMSE: 1.2113025687740517
-for T = 7 R2: 0.1534418099349154
-for T = 7 MAPE: 236735123189816.0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>for T = 7 RMSE: 1.2047296561093668
+for T = 7 R2: 0.15314539303311236
+for T = 7 MAPE: 223761653752961.16
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>for T = 14 RMSE: 1.2137820181490349
-for T = 14 R2: 0.15150881369524583
-for T = 14 MAPE: 233879719165013.22
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>for T = 14 RMSE: 1.2078806745043296
+for T = 14 R2: 0.15229259037166354
+for T = 14 MAPE: 225722200044150.94
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>for T = 21 RMSE: 1.2144000212956745
-for T = 21 R2: 0.15209922673964338
-for T = 21 MAPE: 234706169986012.44
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>for T = 21 RMSE: 1.2111935920664212
+for T = 21 R2: 0.15142382020380118
+for T = 21 MAPE: 224083868539145.94
 </pre></div>
 </div>
 </div>
@@ -1811,19 +1809,19 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>for T = 7 RMSE: 1.21128207689551
-for T = 7 R2: 0.1534704525240096
-for T = 7 MAPE: 237043777322256.0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>for T = 7 RMSE: 1.2047296561758203
+for T = 7 R2: 0.15314539293968654
+for T = 7 MAPE: 223761654005683.25
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>for T = 14 RMSE: 1.213708508788016
-for T = 14 R2: 0.15161158364126137
-for T = 14 MAPE: 234194505433706.8
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>for T = 14 RMSE: 1.2078806745820057
+for T = 14 R2: 0.15229259026263509
+for T = 14 MAPE: 225722200297692.88
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>for T = 21 RMSE: 1.2143207556187292
-for T = 21 R2: 0.15220991059038014
-for T = 21 MAPE: 235035024963153.88
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>for T = 21 RMSE: 1.2111935921416903
+for T = 21 R2: 0.15142382009833244
+for T = 21 MAPE: 224083868785701.38
 </pre></div>
 </div>
 </div>
@@ -2300,19 +2298,19 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>for T = 7 RMSE: 1.2114333166520066
-for T = 7 R2: 0.1532590452591509
-for T = 7 MAPE: 237605370489539.2
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>for T = 7 RMSE: 1.2047308549081428
+for T = 7 R2: 0.15314370766118468
+for T = 7 MAPE: 223831618274890.06
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>for T = 14 RMSE: 1.2137937601497024
-for T = 14 R2: 0.15149239718533325
-for T = 14 MAPE: 234765130228866.03
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>for T = 14 RMSE: 1.207887955985298
+for T = 14 R2: 0.15228236985219445
+for T = 14 MAPE: 225792522188045.28
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>for T = 21 RMSE: 1.214380805747015
-for T = 21 R2: 0.15212605933084833
-for T = 21 MAPE: 235624492039804.97
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>for T = 21 RMSE: 1.2112024732664446
+for T = 21 R2: 0.15141137561613516
+for T = 21 MAPE: 224153187782681.6
 </pre></div>
 </div>
 </div>
@@ -2386,51 +2384,51 @@ for T = 21 MAPE: 235624492039804.97
   <tbody>
     <tr>
       <th>KNN</th>
-      <td>0.326836</td>
-      <td>1.080151</td>
-      <td>1.908459e+14</td>
-      <td>0.326696</td>
-      <td>1.081241</td>
-      <td>1.889442e+14</td>
-      <td>0.327428</td>
-      <td>1.081580</td>
-      <td>1.902687e+14</td>
+      <td>0.333719</td>
+      <td>1.068597</td>
+      <td>1.758291e+14</td>
+      <td>0.333739</td>
+      <td>1.070836</td>
+      <td>1.768587e+14</td>
+      <td>0.334882</td>
+      <td>1.072303</td>
+      <td>1.739965e+14</td>
     </tr>
     <tr>
       <th>Linear Regression</th>
-      <td>0.153442</td>
-      <td>1.211303</td>
-      <td>2.367351e+14</td>
-      <td>0.151509</td>
-      <td>1.213782</td>
-      <td>2.338797e+14</td>
-      <td>0.152099</td>
-      <td>1.214400</td>
-      <td>2.347062e+14</td>
+      <td>0.153145</td>
+      <td>1.204730</td>
+      <td>2.237617e+14</td>
+      <td>0.152293</td>
+      <td>1.207881</td>
+      <td>2.257222e+14</td>
+      <td>0.151424</td>
+      <td>1.211194</td>
+      <td>2.240839e+14</td>
     </tr>
     <tr>
       <th>Ridge</th>
-      <td>0.153470</td>
-      <td>1.211282</td>
-      <td>2.370438e+14</td>
-      <td>0.151612</td>
-      <td>1.213709</td>
-      <td>2.341945e+14</td>
-      <td>0.152210</td>
-      <td>1.214321</td>
-      <td>2.350350e+14</td>
+      <td>0.153145</td>
+      <td>1.204730</td>
+      <td>2.237617e+14</td>
+      <td>0.152293</td>
+      <td>1.207881</td>
+      <td>2.257222e+14</td>
+      <td>0.151424</td>
+      <td>1.211194</td>
+      <td>2.240839e+14</td>
     </tr>
     <tr>
       <th>Lasso</th>
-      <td>0.153259</td>
-      <td>1.211433</td>
-      <td>2.376054e+14</td>
-      <td>0.151492</td>
-      <td>1.213794</td>
-      <td>2.347651e+14</td>
-      <td>0.152126</td>
-      <td>1.214381</td>
-      <td>2.356245e+14</td>
+      <td>0.153144</td>
+      <td>1.204731</td>
+      <td>2.238316e+14</td>
+      <td>0.152282</td>
+      <td>1.207888</td>
+      <td>2.257925e+14</td>
+      <td>0.151411</td>
+      <td>1.211202</td>
+      <td>2.241532e+14</td>
     </tr>
   </tbody>
 </table>
