@@ -1,0 +1,44 @@
+Traceback (most recent call last):
+  File "/Users/leonardovaia/miniconda3/envs/ml_venv/lib/python3.9/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/Users/leonardovaia/miniconda3/envs/ml_venv/lib/python3.9/site-packages/nbclient/client.py", line 1314, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/Users/leonardovaia/miniconda3/envs/ml_venv/lib/python3.9/site-packages/jupyter_core/utils/__init__.py", line 173, in wrapped
+    return loop.run_until_complete(inner)
+  File "/Users/leonardovaia/miniconda3/envs/ml_venv/lib/python3.9/asyncio/base_events.py", line 647, in run_until_complete
+    return future.result()
+  File "/Users/leonardovaia/miniconda3/envs/ml_venv/lib/python3.9/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "/Users/leonardovaia/miniconda3/envs/ml_venv/lib/python3.9/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/Users/leonardovaia/miniconda3/envs/ml_venv/lib/python3.9/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+from matplotlib import pyplot as plt
+from sklearn.metrics import confusion_matrix
+import seaborn as sns
+
+
+y_pred = gridKn.predict(X_test)
+cm = confusion_matrix(y_test, y_pred)
+recall = recall_score(y_test, y_pred)
+plt.figure(figsize=(5, 5))
+sns.heatmap(cm, annot=True, fmt="d", cmap="Blues", xticklabels=["Predicted 0", "Predicted 1"], yticklabels=["Actual 0", "Actual 1"])
+plt.xlabel("Predicted")
+plt.ylabel("Actual")
+plt.title(f"Confusion Matrix\nAuc: {auc:.2f}")
+plt.show()
+------------------
+
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mNameError[0m                                 Traceback (most recent call last)
+Cell [0;32mIn[13], line 13[0m
+[1;32m     11[0m plt[38;5;241m.[39mxlabel([38;5;124m"[39m[38;5;124mPredicted[39m[38;5;124m"[39m)
+[1;32m     12[0m plt[38;5;241m.[39mylabel([38;5;124m"[39m[38;5;124mActual[39m[38;5;124m"[39m)
+[0;32m---> 13[0m plt[38;5;241m.[39mtitle([38;5;124mf[39m[38;5;124m"[39m[38;5;124mConfusion Matrix[39m[38;5;130;01m\n[39;00m[38;5;124mAuc: [39m[38;5;132;01m{[39;00mauc[38;5;132;01m:[39;00m[38;5;124m.2f[39m[38;5;132;01m}[39;00m[38;5;124m"[39m)
+[1;32m     14[0m plt[38;5;241m.[39mshow()
+
+[0;31mNameError[0m: name 'auc' is not defined
+
