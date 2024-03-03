@@ -187,9 +187,6 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Excercise_1.html">Exercise 1</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Excercise 2</a></li>
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="Excercise_3.html">Excercize 3</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Excercise_4.html">Excercise 4</a></li>
 </ul>
@@ -387,15 +384,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Excercise 2</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wind-speed">Wind Speed</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fraud-detection">Fraud Detection</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#second-part-wind">Second Part Wind</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#second-part-fraud-detection">Second Part Fraud Detection</a></li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#fraud-detection">Fraud Detection</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#second-part-wind">Second Part Wind</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#second-part-fraud-detection">Second Part Fraud Detection</a></li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -417,7 +410,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/x5/spm_6r5944dfgx3qj8my0m440000gn/T/ipykernel_2973/4080736814.py:1: DeprecationWarning: 
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/x5/spm_6r5944dfgx3qj8my0m440000gn/T/ipykernel_3745/4080736814.py:1: DeprecationWarning: 
 Pyarrow will become a required dependency of pandas in the next major release of pandas (pandas 3.0),
 (to allow more performant data types, such as the Arrow string type, and better interoperability with other libraries)
 but was not found to be installed on your system.
@@ -744,7 +737,7 @@ memory usage: 8.7+ MB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/x5/spm_6r5944dfgx3qj8my0m440000gn/T/ipykernel_2973/2602708159.py:1: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/x5/spm_6r5944dfgx3qj8my0m440000gn/T/ipykernel_3745/2602708159.py:1: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
   df_Wind[&#39;utc_time&#39;] = pd.to_datetime(df_Wind[&#39;utc_time&#39;]).dt.strftime(&#39;%H&#39;)
 </pre></div>
 </div>
@@ -1036,7 +1029,7 @@ dtype: int64
 <img alt="_images/507e56eac7c73d6fbe6c28875bf4790f29202888ca935a1ac28b2179c239d1d9.png" src="_images/507e56eac7c73d6fbe6c28875bf4790f29202888ca935a1ac28b2179c239d1d9.png" />
 </div>
 </div>
-<p>How we can see here there are a lot of high corellations due to the fact that set of date is gotten every hour and thus for example the max and min temperature are really correlated and other variables too, like the pressure.</p>
+<p>How we can see here there are a lot of high corellations due to the fact that set of date is gotten every hour and thus for example the max and min temperature are really correlated and other variables too, like the pressure. Later i’ll drop the most correlated columns using the VIF scoring</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#df_Wind[&#39;mean_humidity_prev_hour&#39;] = (df_Wind[&#39;max_humidity_prev_hour&#39;] + df_Wind[&#39;min_humidity_prev_hour&#39;]) / 2</span>
@@ -1121,7 +1114,7 @@ dtype: int64
 <div class="cell_output docutils container">
 <img alt="_images/14c1a22d5d1e76156afc138f283c0b38923c52404048daca02fbbe441ba6b957.png" src="_images/14c1a22d5d1e76156afc138f283c0b38923c52404048daca02fbbe441ba6b957.png" />
 <img alt="_images/28d2b05653cab3e9634e6201dcc76f32a085b9d5d5e84de1feb3e932c0a37afa.png" src="_images/28d2b05653cab3e9634e6201dcc76f32a085b9d5d5e84de1feb3e932c0a37afa.png" />
-<img alt="_images/4ac186cccdfbe5abea496eb76bea03df2b7d25656bbe4892e9ab4007b5ba611d.png" src="_images/4ac186cccdfbe5abea496eb76bea03df2b7d25656bbe4892e9ab4007b5ba611d.png" />
+<img alt="_images/917b1d2653fb20dbdc5d930a3aef5f72e447dbf6a5483dc0e7f2b53e817d34d7.png" src="_images/917b1d2653fb20dbdc5d930a3aef5f72e447dbf6a5483dc0e7f2b53e817d34d7.png" />
 </div>
 </div>
 <ol class="arabic simple">
@@ -1130,9 +1123,8 @@ dtype: int64
 <li><p>also for the last graph we don t find any dependency from one another, but we can see that the points are much more concentrated in one area, that’ s beacasue the two columns have a wide range but the most of the date are in a specific area</p></li>
 </ol>
 </section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="fraud-detection">
-<h1>Fraud Detection<a class="headerlink" href="#fraud-detection" title="Link to this heading">#</a></h1>
+<section id="fraud-detection">
+<h2>Fraud Detection<a class="headerlink" href="#fraud-detection" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">train_transaction</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;./Datasets/train_transaction.csv&#39;</span><span class="p">)</span>
@@ -1815,8 +1807,8 @@ dtype: int64
 <li><p>for card1 v v1 is almost the same as the previous one, no correlation and again we see the disparity of v1, showing the disparity between the total number of 1 and 0</p></li>
 </ol>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="second-part-wind">
-<h1>Second Part Wind<a class="headerlink" href="#second-part-wind" title="Link to this heading">#</a></h1>
+<section id="second-part-wind">
+<h2>Second Part Wind<a class="headerlink" href="#second-part-wind" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">statsmodels.stats.outliers_influence</span> <span class="kn">import</span> <span class="n">variance_inflation_factor</span>
@@ -2150,9 +2142,10 @@ dtype: int64
 <img alt="_images/ca104f4292f6e9a02dce0ea6debc80f6c8e9f1d7079619eab5192086c55d62d8.png" src="_images/ca104f4292f6e9a02dce0ea6debc80f6c8e9f1d7079619eab5192086c55d62d8.png" />
 </div>
 </div>
+<p>Now the dataset is much better from a machine learning point of view, we dont have columns too much correlated and only real explicative columns, we just remain we 6 columns, but the dataset contains almost the same amount of informations but it is much lighter and easy to process</p>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="second-part-fraud-detection">
-<h1>Second Part Fraud Detection<a class="headerlink" href="#second-part-fraud-detection" title="Link to this heading">#</a></h1>
+<section id="second-part-fraud-detection">
+<h2>Second Part Fraud Detection<a class="headerlink" href="#second-part-fraud-detection" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_Fraud</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
@@ -2517,62 +2510,154 @@ memory usage: 1.4 MB
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 304/304 [00:15&lt;00:00, 19.90it/s]
-100%|██████████| 303/303 [00:20&lt;00:00, 15.14it/s]
- 69%|██████▉   | 208/302 [00:11&lt;00:06, 14.91it/s]
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">66</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">vif</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">vif</span><span class="p">[</span><span class="s2">&quot;Variable&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_values</span><span class="o">.</span><span class="n">columns</span>
-<span class="ne">----&gt; </span><span class="mi">5</span> <span class="n">vif</span><span class="p">[</span><span class="s2">&quot;VIF&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">variance_inflation_factor</span><span class="p">(</span><span class="n">df_values</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">df_values</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]))]</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="c1"># Filter variables with VIF &gt;= 5</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">high_vif_variables</span> <span class="o">=</span> <span class="n">vif</span><span class="p">[</span><span class="n">vif</span><span class="p">[</span><span class="s2">&quot;VIF&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">5</span><span class="p">]</span>
-
-<span class="nn">Cell In[66], line 5,</span> in <span class="ni">&lt;listcomp&gt;</span><span class="nt">(.0)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">vif</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">vif</span><span class="p">[</span><span class="s2">&quot;Variable&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_values</span><span class="o">.</span><span class="n">columns</span>
-<span class="ne">----&gt; </span><span class="mi">5</span> <span class="n">vif</span><span class="p">[</span><span class="s2">&quot;VIF&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">variance_inflation_factor</span><span class="p">(</span><span class="n">df_values</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">df_values</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]))]</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="c1"># Filter variables with VIF &gt;= 5</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">high_vif_variables</span> <span class="o">=</span> <span class="n">vif</span><span class="p">[</span><span class="n">vif</span><span class="p">[</span><span class="s2">&quot;VIF&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">5</span><span class="p">]</span>
-
-<span class="nn">File ~/miniconda3/envs/ml_venv/lib/python3.9/site-packages/statsmodels/stats/outliers_influence.py:197,</span> in <span class="ni">variance_inflation_factor</span><span class="nt">(exog, exog_idx)</span>
-<span class="g g-Whitespace">    </span><span class="mi">195</span> <span class="n">mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">k_vars</span><span class="p">)</span> <span class="o">!=</span> <span class="n">exog_idx</span>
-<span class="g g-Whitespace">    </span><span class="mi">196</span> <span class="n">x_noti</span> <span class="o">=</span> <span class="n">exog</span><span class="p">[:,</span> <span class="n">mask</span><span class="p">]</span>
-<span class="ne">--&gt; </span><span class="mi">197</span> <span class="n">r_squared_i</span> <span class="o">=</span> <span class="n">OLS</span><span class="p">(</span><span class="n">x_i</span><span class="p">,</span> <span class="n">x_noti</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span><span class="o">.</span><span class="n">rsquared</span>
-<span class="g g-Whitespace">    </span><span class="mi">198</span> <span class="n">vif</span> <span class="o">=</span> <span class="mf">1.</span> <span class="o">/</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">-</span> <span class="n">r_squared_i</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">199</span> <span class="k">return</span> <span class="n">vif</span>
-
-<span class="nn">File ~/miniconda3/envs/ml_venv/lib/python3.9/site-packages/statsmodels/regression/linear_model.py:335,</span> in <span class="ni">RegressionModel.fit</span><span class="nt">(self, method, cov_type, cov_kwds, use_t, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">330</span> <span class="k">if</span> <span class="n">method</span> <span class="o">==</span> <span class="s2">&quot;pinv&quot;</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">331</span>     <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;pinv_wexog&#39;</span><span class="p">)</span> <span class="ow">and</span>
-<span class="g g-Whitespace">    </span><span class="mi">332</span>             <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;normalized_cov_params&#39;</span><span class="p">)</span> <span class="ow">and</span>
-<span class="g g-Whitespace">    </span><span class="mi">333</span>             <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;rank&#39;</span><span class="p">)):</span>
-<span class="ne">--&gt; </span><span class="mi">335</span>         <span class="bp">self</span><span class="o">.</span><span class="n">pinv_wexog</span><span class="p">,</span> <span class="n">singular_values</span> <span class="o">=</span> <span class="n">pinv_extended</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">wexog</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">336</span>         <span class="bp">self</span><span class="o">.</span><span class="n">normalized_cov_params</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">337</span>             <span class="bp">self</span><span class="o">.</span><span class="n">pinv_wexog</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pinv_wexog</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">339</span>         <span class="c1"># Cache these singular values for use later.</span>
-
-<span class="nn">File ~/miniconda3/envs/ml_venv/lib/python3.9/site-packages/statsmodels/tools/tools.py:264,</span> in <span class="ni">pinv_extended</span><span class="nt">(x, rcond)</span>
-<span class="g g-Whitespace">    </span><span class="mi">262</span> <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">263</span> <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">conjugate</span><span class="p">()</span>
-<span class="ne">--&gt; </span><span class="mi">264</span> <span class="n">u</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">vt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">svd</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">265</span> <span class="n">s_orig</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">266</span> <span class="n">m</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-
-<span class="nn">File ~/miniconda3/envs/ml_venv/lib/python3.9/site-packages/numpy/linalg/linalg.py:1681,</span> in <span class="ni">svd</span><span class="nt">(a, full_matrices, compute_uv, hermitian)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1678</span>         <span class="n">gufunc</span> <span class="o">=</span> <span class="n">_umath_linalg</span><span class="o">.</span><span class="n">svd_n_s</span>
-<span class="g g-Whitespace">   </span><span class="mi">1680</span> <span class="n">signature</span> <span class="o">=</span> <span class="s1">&#39;D-&gt;DdD&#39;</span> <span class="k">if</span> <span class="n">isComplexType</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="k">else</span> <span class="s1">&#39;d-&gt;ddd&#39;</span>
-<span class="ne">-&gt; </span><span class="mi">1681</span> <span class="n">u</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">vh</span> <span class="o">=</span> <span class="n">gufunc</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">signature</span><span class="o">=</span><span class="n">signature</span><span class="p">,</span> <span class="n">extobj</span><span class="o">=</span><span class="n">extobj</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1682</span> <span class="n">u</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">result_t</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1683</span> <span class="n">s</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">_realType</span><span class="p">(</span><span class="n">result_t</span><span class="p">),</span> <span class="n">copy</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 69%|██████▉   | 208/302 [00:21&lt;00:06, 14.91it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████| 302/302 [00:17&lt;00:00, 17.24it/s]
+100%|██████████| 301/301 [00:16&lt;00:00, 18.44it/s]
+100%|██████████| 300/300 [00:16&lt;00:00, 18.57it/s]
+100%|██████████| 299/299 [00:15&lt;00:00, 19.13it/s]
+100%|██████████| 298/298 [00:15&lt;00:00, 19.27it/s]
+100%|██████████| 297/297 [00:15&lt;00:00, 19.09it/s]
+100%|██████████| 296/296 [00:15&lt;00:00, 19.43it/s]
+100%|██████████| 295/295 [00:15&lt;00:00, 19.50it/s]
+100%|██████████| 294/294 [00:15&lt;00:00, 19.33it/s]
+100%|██████████| 293/293 [00:15&lt;00:00, 19.24it/s]
+100%|██████████| 292/292 [00:13&lt;00:00, 22.06it/s]
+100%|██████████| 291/291 [00:11&lt;00:00, 24.92it/s]
+100%|██████████| 290/290 [00:11&lt;00:00, 24.66it/s]
+100%|██████████| 289/289 [00:11&lt;00:00, 25.99it/s]
+100%|██████████| 288/288 [00:11&lt;00:00, 25.87it/s]
+100%|██████████| 287/287 [00:13&lt;00:00, 21.08it/s]
+100%|██████████| 286/286 [00:13&lt;00:00, 21.40it/s]
+100%|██████████| 285/285 [00:13&lt;00:00, 20.71it/s]
+100%|██████████| 284/284 [00:13&lt;00:00, 20.46it/s]
+100%|██████████| 283/283 [00:13&lt;00:00, 21.12it/s]
+100%|██████████| 282/282 [00:13&lt;00:00, 20.66it/s]
+100%|██████████| 281/281 [00:14&lt;00:00, 19.98it/s]
+100%|██████████| 280/280 [00:12&lt;00:00, 21.57it/s]
+100%|██████████| 279/279 [00:13&lt;00:00, 20.99it/s]
+100%|██████████| 278/278 [00:12&lt;00:00, 21.44it/s]
+100%|██████████| 277/277 [00:12&lt;00:00, 21.82it/s]
+100%|██████████| 276/276 [00:12&lt;00:00, 21.80it/s]
+100%|██████████| 275/275 [00:12&lt;00:00, 22.30it/s]
+100%|██████████| 274/274 [00:12&lt;00:00, 22.70it/s]
+100%|██████████| 273/273 [00:11&lt;00:00, 23.44it/s]
+100%|██████████| 272/272 [00:12&lt;00:00, 22.12it/s]
+100%|██████████| 271/271 [00:11&lt;00:00, 22.84it/s]
+100%|██████████| 270/270 [00:11&lt;00:00, 23.19it/s]
+100%|██████████| 269/269 [00:11&lt;00:00, 22.88it/s]
+100%|██████████| 268/268 [00:08&lt;00:00, 29.97it/s]
+100%|██████████| 267/267 [00:11&lt;00:00, 23.11it/s]
+100%|██████████| 266/266 [00:12&lt;00:00, 21.44it/s]
+100%|██████████| 265/265 [00:11&lt;00:00, 23.80it/s]
+100%|██████████| 264/264 [00:10&lt;00:00, 24.23it/s]
+100%|██████████| 263/263 [00:10&lt;00:00, 25.77it/s]
+100%|██████████| 262/262 [00:09&lt;00:00, 27.18it/s]
+100%|██████████| 261/261 [00:08&lt;00:00, 29.52it/s]
+100%|██████████| 260/260 [00:10&lt;00:00, 25.79it/s]
+100%|██████████| 259/259 [00:09&lt;00:00, 25.92it/s]
+100%|██████████| 258/258 [00:09&lt;00:00, 25.90it/s]
+100%|██████████| 257/257 [00:11&lt;00:00, 22.68it/s]
+100%|██████████| 256/256 [00:10&lt;00:00, 24.37it/s]
+100%|██████████| 255/255 [00:09&lt;00:00, 28.06it/s]
+100%|██████████| 254/254 [00:09&lt;00:00, 28.09it/s]
+100%|██████████| 253/253 [00:08&lt;00:00, 29.72it/s]
+100%|██████████| 252/252 [00:08&lt;00:00, 31.20it/s]
+100%|██████████| 251/251 [00:07&lt;00:00, 31.68it/s]
+100%|██████████| 250/250 [00:07&lt;00:00, 31.99it/s]
+100%|██████████| 249/249 [00:07&lt;00:00, 31.94it/s]
+100%|██████████| 248/248 [00:07&lt;00:00, 32.20it/s]
+100%|██████████| 247/247 [00:07&lt;00:00, 33.00it/s]
+100%|██████████| 246/246 [00:07&lt;00:00, 31.61it/s]
+100%|██████████| 245/245 [00:07&lt;00:00, 32.49it/s]
+100%|██████████| 244/244 [00:07&lt;00:00, 32.42it/s]
+100%|██████████| 243/243 [00:07&lt;00:00, 34.03it/s]
+100%|██████████| 242/242 [00:07&lt;00:00, 33.06it/s]
+100%|██████████| 241/241 [00:07&lt;00:00, 33.71it/s]
+100%|██████████| 240/240 [00:07&lt;00:00, 32.30it/s]
+100%|██████████| 239/239 [00:07&lt;00:00, 31.87it/s]
+100%|██████████| 238/238 [00:08&lt;00:00, 27.89it/s]
+100%|██████████| 237/237 [00:07&lt;00:00, 31.19it/s]
+100%|██████████| 236/236 [00:07&lt;00:00, 30.65it/s]
+100%|██████████| 235/235 [00:07&lt;00:00, 31.48it/s]
+100%|██████████| 234/234 [00:07&lt;00:00, 30.04it/s]
+100%|██████████| 233/233 [00:07&lt;00:00, 31.65it/s]
+100%|██████████| 232/232 [00:07&lt;00:00, 30.80it/s]
+100%|██████████| 231/231 [00:09&lt;00:00, 25.42it/s]
+100%|██████████| 230/230 [00:09&lt;00:00, 24.03it/s]
+100%|██████████| 229/229 [00:07&lt;00:00, 28.74it/s]
+100%|██████████| 228/228 [00:07&lt;00:00, 32.33it/s]
+100%|██████████| 227/227 [00:06&lt;00:00, 35.84it/s]
+100%|██████████| 226/226 [00:06&lt;00:00, 35.53it/s]
+100%|██████████| 225/225 [00:06&lt;00:00, 36.17it/s]
+100%|██████████| 224/224 [00:05&lt;00:00, 39.95it/s]
+100%|██████████| 223/223 [00:06&lt;00:00, 32.47it/s]
+100%|██████████| 222/222 [00:05&lt;00:00, 38.15it/s]
+100%|██████████| 221/221 [00:06&lt;00:00, 33.65it/s]
+100%|██████████| 220/220 [00:05&lt;00:00, 42.07it/s]
+100%|██████████| 219/219 [00:05&lt;00:00, 42.51it/s]
+100%|██████████| 218/218 [00:04&lt;00:00, 44.37it/s]
+100%|██████████| 217/217 [00:05&lt;00:00, 39.25it/s]
+100%|██████████| 216/216 [00:05&lt;00:00, 38.56it/s]
+100%|██████████| 215/215 [00:04&lt;00:00, 43.73it/s]
+100%|██████████| 214/214 [00:05&lt;00:00, 42.68it/s]
+100%|██████████| 213/213 [00:04&lt;00:00, 43.20it/s]
+100%|██████████| 212/212 [00:05&lt;00:00, 40.76it/s]
+100%|██████████| 211/211 [00:06&lt;00:00, 32.92it/s]
+100%|██████████| 210/210 [00:04&lt;00:00, 42.98it/s]
+100%|██████████| 209/209 [00:05&lt;00:00, 39.18it/s]
+100%|██████████| 208/208 [00:05&lt;00:00, 40.32it/s]
+100%|██████████| 207/207 [00:05&lt;00:00, 38.51it/s]
+100%|██████████| 206/206 [00:05&lt;00:00, 39.19it/s]
+100%|██████████| 205/205 [00:04&lt;00:00, 41.63it/s]
+100%|██████████| 204/204 [00:04&lt;00:00, 41.99it/s]
+100%|██████████| 203/203 [00:04&lt;00:00, 42.24it/s]
+100%|██████████| 202/202 [00:04&lt;00:00, 46.23it/s]
+100%|██████████| 201/201 [00:04&lt;00:00, 41.48it/s]
+100%|██████████| 200/200 [00:04&lt;00:00, 41.12it/s]
+100%|██████████| 199/199 [00:05&lt;00:00, 39.55it/s]
+100%|██████████| 198/198 [00:06&lt;00:00, 32.40it/s]
+100%|██████████| 197/197 [00:05&lt;00:00, 38.39it/s]
+100%|██████████| 196/196 [00:05&lt;00:00, 35.62it/s]
+100%|██████████| 195/195 [00:03&lt;00:00, 51.45it/s]
+100%|██████████| 194/194 [00:04&lt;00:00, 42.00it/s]
+100%|██████████| 193/193 [00:04&lt;00:00, 45.67it/s]
+100%|██████████| 192/192 [00:05&lt;00:00, 35.21it/s]
+100%|██████████| 191/191 [00:03&lt;00:00, 55.47it/s]
+100%|██████████| 190/190 [00:03&lt;00:00, 58.47it/s]
+100%|██████████| 189/189 [00:04&lt;00:00, 41.56it/s]
+100%|██████████| 188/188 [00:03&lt;00:00, 51.32it/s]
+100%|██████████| 187/187 [00:03&lt;00:00, 56.18it/s]
+100%|██████████| 186/186 [00:03&lt;00:00, 59.49it/s]
+100%|██████████| 185/185 [00:03&lt;00:00, 61.60it/s]
+100%|██████████| 184/184 [00:03&lt;00:00, 46.79it/s]
+100%|██████████| 183/183 [00:04&lt;00:00, 38.68it/s]
+100%|██████████| 182/182 [00:05&lt;00:00, 32.37it/s]
+100%|██████████| 181/181 [00:03&lt;00:00, 51.63it/s]
+100%|██████████| 180/180 [00:03&lt;00:00, 57.65it/s]
+100%|██████████| 179/179 [00:03&lt;00:00, 52.39it/s]
+100%|██████████| 178/178 [00:03&lt;00:00, 56.74it/s]
+100%|██████████| 177/177 [00:02&lt;00:00, 62.06it/s]
+100%|██████████| 176/176 [00:03&lt;00:00, 56.10it/s]
+100%|██████████| 175/175 [00:02&lt;00:00, 63.15it/s]
+100%|██████████| 174/174 [00:03&lt;00:00, 49.07it/s]
+100%|██████████| 173/173 [00:02&lt;00:00, 66.30it/s]
+100%|██████████| 172/172 [00:02&lt;00:00, 64.22it/s]
+100%|██████████| 171/171 [00:03&lt;00:00, 56.08it/s]
+100%|██████████| 170/170 [00:02&lt;00:00, 57.89it/s]
+100%|██████████| 169/169 [00:02&lt;00:00, 61.58it/s]
+100%|██████████| 168/168 [00:02&lt;00:00, 57.11it/s]
+100%|██████████| 167/167 [00:02&lt;00:00, 60.92it/s]
+100%|██████████| 166/166 [00:02&lt;00:00, 69.51it/s]
+100%|██████████| 165/165 [00:02&lt;00:00, 64.64it/s]
+100%|██████████| 164/164 [00:02&lt;00:00, 59.85it/s]
+100%|██████████| 163/163 [00:02&lt;00:00, 67.76it/s]
+100%|██████████| 162/162 [00:02&lt;00:00, 63.74it/s]
+100%|██████████| 161/161 [00:01&lt;00:00, 92.36it/s]
+100%|██████████| 160/160 [00:01&lt;00:00, 89.66it/s]
+100%|██████████| 159/159 [00:01&lt;00:00, 92.94it/s]
+100%|██████████| 158/158 [00:01&lt;00:00, 88.68it/s]
+100%|██████████| 157/157 [00:01&lt;00:00, 82.84it/s]
+100%|██████████| 156/156 [00:02&lt;00:00, 73.87it/s]
+100%|██████████| 155/155 [00:01&lt;00:00, 94.55it/s] 
 </pre></div>
 </div>
 </div>
@@ -2589,6 +2674,7 @@ memory usage: 1.4 MB
 </div>
 </div>
 </div>
+<p>I reduced the size of the dataset just to elaborate the VIF, because otherwise would take to much time, and using this data size we dropped 146 columns and we have left 156 columns, much better of the starting df we had</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#df_tmp1.to_csv(&#39;./Datasets/df_noMultilinear.csv&#39;, index=False)</span>
@@ -2626,6 +2712,7 @@ memory usage: 702.9 MB
 </div>
 </div>
 </div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -2692,15 +2779,11 @@ memory usage: 702.9 MB
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Excercise 2</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wind-speed">Wind Speed</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fraud-detection">Fraud Detection</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#second-part-wind">Second Part Wind</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#second-part-fraud-detection">Second Part Fraud Detection</a></li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#fraud-detection">Fraud Detection</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#second-part-wind">Second Part Wind</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#second-part-fraud-detection">Second Part Fraud Detection</a></li>
-</ul>
-
   </nav></div>
 
 </div></div>
